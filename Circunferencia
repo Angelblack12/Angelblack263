@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Circulo {
+   private final double PI = 3.14;
+   private double radio;
+
+   // Constructor sin parámetros
+   public Circulo() {
+      this.radio = 1.0; // Valor por defecto
+   }
+
+   // Constructor con parámetros
+   public Circulo(double radio) {
+      this.radio = radio;
+   }
+
+   // Métodos getter y setter para el radio
+   public void setRadio(double radio) {
+      this.radio = radio;
+   }
+
+   public double getRadio() {
+      return radio;
+   }
+
+   // Métodos para calcular diámetro, longitud y área
+   public double calcularDiametro() {
+      return 2 * radio;
+   }
+
+   public double calcularLongitud() {
+      return 2 * PI * radio;
+   }
+
+   public double calcularArea() {
+      return PI * radio * radio;
+   }
+
+   // Método para mostrar los resultados
+   public void mostrarResultados() {
+      System.out.println("Diámetro: " + calcularDiametro());
+      System.out.println("Longitud: " + calcularLongitud());
+      System.out.println("Área: " + calcularArea());
+   }
+
+   public static void main(String[] args) {
+      // Crear objeto c1 usando el constructor sin parámetros
+      Circulo c1 = new Circulo();
+      c1.mostrarResultados();
+   
+      // Solicitar el radio para el objeto c2
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("Introduce el radio para el círculo c2: ");
+      double radio = scanner.nextDouble();
+   
+      // Crear objeto c2 usando el constructor con parámetros
+      Circulo c2 = new Circulo(radio);
+      c2.mostrarResultados();
+   }
+}
